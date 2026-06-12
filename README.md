@@ -1,2 +1,2 @@
-# Average-Reactor-Game
+# Average Reactor Game
 A shitpost game.
