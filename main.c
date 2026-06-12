@@ -41,20 +41,12 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT msg,
             return 0;
 
         case WM_COMMAND:
-            if (LOWORD(wParam) == 1)
-            {
-                MessageBox(
-                    hwnd,
-                    "The reactor has exploded!",
-                    "GAME OVER",
-                    MB_OK
-                );
-            }
-            return 0;
-
-        case WM_DESTROY:
-            PostQuitMessage(0);
-            return 0;
+		if (LOWORD(wParam) == 1)
+		{
+			MessageBox(hwnd, "The reactor has exploded!", "GAME OVER", MB_OK);
+        PostQuitMessage(0);
+    }
+    return 0;
 
         default:
             return DefWindowProc(hwnd, msg, wParam, lParam);
@@ -78,7 +70,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
     HWND hwnd = CreateWindowEx(
         0,
         CLASS_NAME,
-        "Average Reactor Game 1.0",
+        "Average Reactor Game 1.1",
         WS_OVERLAPPEDWINDOW,
         CW_USEDEFAULT, CW_USEDEFAULT,
         800, 600,
